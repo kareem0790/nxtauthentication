@@ -1,0 +1,65 @@
+/* Write your CSS code here */
+.login-form-container {
+  background-color: #ffffff;
+  height: 100vh;
+  background-size: cover;
+  width: 90%;
+  margin: auto;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.logo-image {
+  width: 160px;
+  margin-bottom: 20px;
+}
+.login-image {
+  width: 100%;
+  max-width: 350px;
+}
+.form-container {
+  margin-top: 30px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+.large-logo-image {
+  display: none;
+}
+.input-container {
+  display: flex;
+  margin-bottom: 15px;
+  max-width: 350px;
+  flex-direction: column;
+  width: 100%;
+}
+.label-input {
+  font-family: 'Roboto';
+  font-size: 16px;
+  color: #475569;
+  margin-bottom: 5px;
+}
+.input {
+  height: 40px;
+  padding: 8px 16px 8px 16px;
+  border: 1px solid #d7dfe9;
+  outline: none;
+  cursor: pointer;
+  background-color: #d7dfe9;
+  border-radius: 8px;
+  font-family: 'Roboto';
+  font-size: 16px;
+}
+.password {
+  height: 40px;
+  padding: 8px 16px 8px 16px;
+  border: 1px solid #d7dfe9;
+  outline: none;
+  cursor: pointer;
+  background-color: #d7dfe9;
+  border-radius: 8px;
+  font-family: 'Roboto';
+  font-size: 16px;
+}
