@@ -1,1 +1,117 @@
 /* Write your CSS code here */
+.nav-container {
+  width: 100%;
+  padding-top: 10px;
+}
+.nav-content {
+  width: 90%;
+  max-width: 1160px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (max-width: 767px) {
+  .nav-content {
+    display: flex;
+    flex-direction: column;
+    padding-right: 20px;
+    width: 90%;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.logo-lg-img {
+  width: 150px;
+}
+@media screen and (max-width: 767px) {
+  .logo-lg-img {
+    display: none;
+  }
+}
+.list-menu-container {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .list-menu-container {
+    display: flex;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 768px) {
+  .list-lg-container {
+    display: flex;
+    list-style-type: none;
+    padding-left: 0px;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .list-item {
+    margin-right: 10px;
+    color: #64748b;
+    font-family: 'Roboto';
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .logout-lg-btn {
+    background-color: #0b69ff;
+    height: 30px;
+    border: none;
+    margin-left: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: 'Roboto';
+    font-size: 12px;
+  }
+}
+.header-container {
+  width: 90%;
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+}
+@media screen and (min-width: 768px) {
+  .header-container {
+    display: none;
+  }
+}
+.logo {
+  width: 120px;
+}
+.logout-button {
+  background-color: transparent;
+  border: none;
+  padding: 0px;
+  margin: 0px;
+}
+.logout-image {
+  height: 25px;
+}
+.menu-container {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .menu-container {
+    display: none;
+  }
+}
+.list-container {
+  width: 90%;
+  list-style-type: none;
+  padding-left: 0px;
+  background-color: #e6f6ff;
+  margin: auto;
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-around;
+  align-items: center;
+  height: 70px;
+}
+.home-btn {
+  width: 30px;
+}

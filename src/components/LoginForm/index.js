@@ -5,7 +5,7 @@ import './index.css'
 class LoginForm extends Component {
   state = {
     userinput: '',
-    userpassword: '',
+    password: '',
     errorMsg: '',
     isLogedIn: false,
   }
@@ -35,11 +35,11 @@ class LoginForm extends Component {
   }
 
   onChangePassword = event => {
-    this.setState({userpassword: event.target.value})
+    this.setState({password: event.target.value})
   }
 
   getUserPassword = () => {
-    const {userpassword} = this.state
+    const {password} = this.state
 
     return (
       <>
@@ -50,7 +50,7 @@ class LoginForm extends Component {
           id="Password"
           placeholder="Password"
           className="password"
-          value={userpassword}
+          value={password}
           type="password"
           onChange={this.onChangePassword}
         />
@@ -58,7 +58,39 @@ class LoginForm extends Component {
     )
   }
 
+  onSuccessLogin = () => {
+    const {history} = this.props
+
+    history.replace('/')
+  }
+
+  onFailureLogin = error => {
+    this.setState({errorMsg: error, isLogedIn: true})
+  }
+
+  onSubmitForm = async event => {
+    event.preventDefault()
+    const {userinput, password} = this.state
+    const userDetails = {userinput, password}
+    const url = 'https://apis.ccbp.in/login'
+
+    const options = {
+      method: 'POST',
+      body: JSON.stringify(userDetails),
+    }
+
+    const response = await fetch(url, options)
+    const data = await response.json()
+    console.log(data)
+    if (response.ok === true) {
+      this.onSuccessLogin()
+    } else {
+      this.onFailureLogin(data.error_msg)
+    }
+  }
+
   render() {
+    const {errorMsg, isLogedIn} = this.state
     return (
       <div className="login-form-container">
         <img
@@ -71,7 +103,7 @@ class LoginForm extends Component {
           alt="login"
           className="login-image"
         />
-        <form className="form-container">
+        <form className="form-container" onSubmit={this.onSubmitForm}>
           <img
             src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-logo-img.png"
             alt="logo"
@@ -79,9 +111,10 @@ class LoginForm extends Component {
           />
           <div className="input-container">{this.getUserInput()}</div>
           <div className="input-container">{this.getUserPassword()}</div>
-          <button type="button" className="login=btn">
+          <button type="submit" className="login-btn">
             Login
           </button>
+          {isLogedIn && <p className="error-msg">*{errorMsg}</p>}
         </form>
       </div>
     )

@@ -1,1 +1,42 @@
 /* Write your CSS code here */
+.home-container {
+  width: 90%;
+  margin: auto;
+  max-width: 350px;
+}
+@media screen and (min-width: 768px) {
+  .home-container {
+    display: flex;
+    align-items: center;
+    max-width: 1110px;
+    padding-top: 60px;
+  }
+}
+.body {
+  margin-right: 20px;
+}
+.heading {
+  font-family: 'Roboto';
+  font-size: 38px;
+  color: #1e293b;
+}
+.body-content {
+  font-family: 'Roboto';
+  font-size: 18px;
+  color: #64748b;
+}
+.shop-btn {
+  color: #ffffff;
+  border: none;
+  background-color: #0967d2;
+  font-family: 'Roboto';
+  font-size: 14px;
+  border-radius: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.home-img {
+  width: 40%;
+}
